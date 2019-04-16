@@ -54,6 +54,7 @@ public class Service {
 				count++;
 			}
 		}
+		System.out.println("Number of accounts with first name " + name + ": " + count);
 		return count;
 	}
 

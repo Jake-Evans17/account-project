@@ -47,11 +47,6 @@ public class Tests {
 		assertEquals("Actual was not expected", 2, Service.countFirstName("Bill"));
 	}
 	
-	@Test
-	public void test4() {
-		assertEquals("Actual was not expected", "There are 2 accounts with the first name Bill", Service.countFirstName("Bill"));
-	}
-	
 	@AfterClass
 	public static void emptyMap() {
 		Service.getMap1().clear();
