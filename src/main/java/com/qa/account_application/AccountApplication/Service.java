@@ -4,21 +4,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import java.lang.reflect.Type;
 
 public class Service {
 	
 	private static Map<Integer, Account> map1 = new HashMap<Integer, Account>();
     static Gson gson = new Gson();
-    static String json = gson.toJson(map1);
+    static String json = gson.toJson(getMap1());
 	
+	public static Map<Integer, Account> getMap1() {
+		return map1;
+	}
+
+	public static void setMap1(Map<Integer, Account> map1) {
+		Service.map1 = map1;
+	}
+    
 	public static void addAccount(Account account) {
-		map1.put(account.getAccountNumber(), account);
+		getMap1().put(account.getAccountNumber(), account);
 	}
 	
 	public static Account retrieveAccount(int key) {
-		Account account = map1.get(key);
+		Account account = getMap1().get(key);
 		int accountNumber = account.getAccountNumber();
 		String firstName = account.getFirstName();
 		String lastName = account.getLastName();
@@ -31,14 +37,19 @@ public class Service {
 	
 	public static String mapToJson() {
         Gson gson = new Gson();
-        String json = gson.toJson(map1);
+        String json = gson.toJson(getMap1());
         System.out.println("json = " + json);
         return json;
 	}
-	
 	
 	public static <T> T getObjectForJSON(String json, Class<T> clazz) {
 		Gson gson = new Gson();
 		return gson.fromJson(json, clazz);
 	}
+
+	public static int countFirstName(String name) {
+		return 0;
+	}
+
+
 }
