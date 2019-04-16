@@ -37,8 +37,14 @@ public class Tests {
 		assertEquals("Actual was not expected", 1, Service.countFirstName("John"));
 	}
 	
+	@Test
 	public void test2() {
 		assertEquals("Actual was not expected", 0, Service.countFirstName("Debra"));
+	}
+	
+	@Test
+	public void test3() {
+		assertEquals("Actual was not expected", 2, Service.countFirstName("Bill"));
 	}
 	
 	@AfterClass
