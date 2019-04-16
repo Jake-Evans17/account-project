@@ -34,12 +34,11 @@ public class Tests {
 	
 	@Test
 	public void test1() {
-		assertEquals("Does not return an integer", 0, Service.countFirstName("name"));
+		assertEquals("Actual was not expected", 1, Service.countFirstName("John"));
 	}
 	
-	@Test
 	public void test2() {
-		assertEquals("Actual was not expected", 2, Service.countFirstName("Bill"));
+		assertEquals("Actual was not expected", 0, Service.countFirstName("Debra"));
 	}
 	
 	@AfterClass
