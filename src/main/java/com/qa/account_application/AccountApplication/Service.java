@@ -48,12 +48,13 @@ public class Service {
 	}
 
 	public static int countFirstName(String name) {
+		int count = 0;
 		for (int key : map1.keySet()) {
 			if (map1.get(key).getFirstName().equals(name)) {
-				return 1;
+				count++;
 			}
 		}
-		return 0;
+		return count;
 	}
 
 
